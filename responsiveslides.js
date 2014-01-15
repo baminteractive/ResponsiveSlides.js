@@ -268,6 +268,16 @@
           });
         }
 
+        // Stop cycle from event
+        $this.bind("stop", function(e){
+          clearInterval(rotate);
+        });
+
+        // Start cycle from event
+        $this.bind("start", function(e){
+          restartCycle();
+       });
+ 
         // Pager click event handler
         if (settings.pager || settings.manualControls) {
           $tabs.bind("click", function (e) {
